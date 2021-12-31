@@ -1,7 +1,7 @@
 :root{
     --vDarkBlue: hsl(233, 47%, 7%);
     --dsBlue: hsl(244, 38%, 16%);
-    --sViolet: hsl(277, 64%, 61%);
+    --sViolet: hsla(277, 64%, 61%, 0.5);
 
     --white:hsl(0, 0%, 100%);
     --transWhite1: hsla(0, 0%, 100%, 0.75);
@@ -24,6 +24,7 @@ body{
     align-items:center;
     justify-content: center;
     height: 100%;
+    
 }
 
 span{
@@ -58,9 +59,28 @@ span{
     margin-top: 20%;
 }
 
-img{
-    background-color: var(--sViolet);
+.imgbox{
+    position: relative;
+
 }
+
+/** Not sure why I had to add this, but had to add to get tint to line up **/
+img{
+    margin-bottom: -3px;
+}
+
+
+
+.imgbox:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--sViolet);
+  }
 h1{
     color: var(--white);
 }
